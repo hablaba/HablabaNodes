@@ -24,7 +24,7 @@ my_category = "Comfy Annotation Examples"
 @ComfyFunc(my_category)
 def crop_face(
     image: ImageTensor,
-    padding: int = NumberInput(0, 0, 4096, 64, "number"),
+    padding: int = NumberInput(0, 0, 4096, 1, "number"),
 ) -> ImageTensor:
     
     print("hi!")
@@ -46,7 +46,7 @@ def crop_face(
         yc = int(y + (h / 2))
         xc = int(x + (w / 2))
         
-        max_dim = (max([w,h])/2) + padding
+        max_dim = int((max([w,h])/2)) + padding
         
         x = int(xc - max_dim)
         x2 = int(xc + max_dim)
