@@ -27,7 +27,7 @@ def crop_face(
     padding: int = NumberInput(0, 0, 4096, 1, "number"),
 ) -> ImageTensor:
     
-    print("hi!")
+    # print("hi!")
     
     crops = []
     for _image in image:
@@ -65,5 +65,5 @@ def crop_face(
         
         crops.append(cropped)
     
-    print("hello?")
+    # print("hello?")
     return torch.cat(crops, dim=0)
